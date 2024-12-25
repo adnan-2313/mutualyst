@@ -64,3 +64,8 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .gradient-title {
+    @apply font-extrabold bg-gradient-to-br from-zinc-500 via-zinc-300 to-zinc-500 bg-clip-text tracking-tighter text-transparent pr-2 pb-2;
+  }
+}
