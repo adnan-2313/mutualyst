@@ -13,7 +13,7 @@ import { ChevronRight } from "lucide-react";
 const Landing = () => {
   return (
     <section>
-      <main className="flex flex-col justify-center items-center pt-20">
+      <main className="flex flex-col justify-center items-center pt-32 sm:pt-20 ">
         <h1 className="gradient-title leading-[40px]  md:leading-[80px] text-5xl sm:text-6xl md:text-[6rem] items-center justify-center text-center font-extrabold">
           Streamline Your
           <br />
