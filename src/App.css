@@ -1,6 +1,15 @@
-.animated-dotted-background {
-  background-color:#09090b ;
-  background-image: radial-gradient(#302e2e 1px, transparent 1px);
+:root {
+  --bg-color: #f5f4f4;
+  --dot-color: #979494;
+}
+
+.dark {
+  --bg-color: #09090b;
+  --dot-color: #302e2e;
+}
+
+.background-dark {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 30px 30px;
-  /* animation: moveDots 10s linear infinite; */
 }

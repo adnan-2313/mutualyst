@@ -1,13 +1,10 @@
-import Header from "./components/Header";
 import "./App.css";
-import Landing from "./pages/Landing";
+import LayoutPage from "./Layout/LayoutPage";
+
 const App = () => {
   return (
     <>
-      <div className="h-screen animated-dotted-background">
-        <Header />
-        <Landing/>
-      </div>
+      <LayoutPage />
     </>
   );
 };
