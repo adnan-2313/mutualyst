@@ -1,21 +1,20 @@
+import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
-import Landing from "../pages/Landing";
 import { useEffect, useState } from "react";
 const LayoutPage = () => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "light"
+  );
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
   }, [theme]);
   return (
     <>
       <div className="background-dark transition-all duration-300">
         <Header theme={theme} setTheme={setTheme} />
-        <Landing />
+        <Outlet />
       </div>
     </>
   );

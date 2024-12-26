@@ -1,10 +1,33 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import LayoutPage from "./Layout/LayoutPage";
+import Landing from "./pages/Landing";
+import PlansPage from "./pages/PlansPage";
+import ErrorPage from "./pages/ErrorPage";
 
+const router = createBrowserRouter([
+  {
+    element: <LayoutPage />,
+    children: [
+      {
+        path: "/",
+        element: <Landing />,
+      },
+      {
+        path: "/plans",
+        element: <PlansPage />,
+      },
+    ],
+  },
+  {
+    element: <ErrorPage />,
+    path: "/*",
+  },
+]);
 const App = () => {
   return (
     <>
-      <LayoutPage />
+      <RouterProvider router={router} />
     </>
   );
 };

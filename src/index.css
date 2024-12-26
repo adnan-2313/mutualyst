@@ -73,3 +73,4 @@
     @apply font-extrabold bg-gradient-to-br bg-clip-text text-transparent tracking-tighter pr-2 pb-6 from-zinc-800 via-zinc-500 to-zinc-800; /* Change gradient in dark mode */
   }
 }
+

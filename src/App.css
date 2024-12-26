@@ -5,11 +5,14 @@
 
 .dark {
   --bg-color: #09090b;
-  --dot-color: #302e2e;
+  --dot-color: #3f3b3b;
 }
 
 .background-dark {
   background-color: var(--bg-color);
   background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 30px 30px;
+}
+.active {
+  color: #a1a1a1;
 }
