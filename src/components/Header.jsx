@@ -63,9 +63,9 @@ const Header = ({ theme, setTheme }) => {
         </div>
       </header>
       <nav
-        className={`z-50 left-0 w-full h-screen top-0 absolute ${
-          isOpen ? "w-full" : "w-0"
-        } right-16  shadow-lg lg:hidden bg-white  dark:bg-zinc-950  overflow-hidden transition-all duration-300 `}
+        className={`z-50 left-0 w-full top-0 absolute ${
+          isOpen ? "h-screen" : "h-0"
+        } right-16  shadow-lg lg:hidden bg-white  dark:bg-zinc-950  overflow-hidden transition-all duration-500 `}
       >
         <div className="">
           <div className="flex justify-between px-4 pt-2 pb-10 border-b  bg-black border-zinc-800 ">
