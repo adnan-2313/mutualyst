@@ -63,7 +63,7 @@ const Header = ({ theme, setTheme }) => {
         </div>
       </header>
       <nav
-        className={`z-50 left-0 w-full h-screen top-0 fixed ${
+        className={`z-50 left-0 w-full h-screen top-0 absolute ${
           isOpen ? "w-full" : "w-0"
         } right-16  shadow-lg lg:hidden bg-white  dark:bg-zinc-950  overflow-hidden transition-all duration-300 `}
       >
@@ -71,7 +71,7 @@ const Header = ({ theme, setTheme }) => {
           <div className="flex justify-between px-4 pt-2 pb-10 border-b  bg-black border-zinc-800 ">
             <img src="/Logo2.png" alt="" className="w-44 mr-36 " />
             <button className="text-white" onClick={() => setIsOpen(false)}>
-              <X/>
+              <X />
             </button>
           </div>
         </div>
