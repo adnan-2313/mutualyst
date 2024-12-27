@@ -34,7 +34,7 @@ const Landing = () => {
           </Button>
         </div>
       </main>
-      <div className="w-full max-w-[90rem] flex   text-start flex-col  bg-slate-300 dark:bg-zinc-950  overflow-x-hidden">
+      <div className="w-full max-w-[90rem] flex   text-start flex-col  bg-[#b6b6c2] dark:bg-zinc-950  overflow-x-hidden">
         <div className="py-12  flex justify-center -mt-5   whitespace-nowrap  ">
           <h2 className="text-4xl border-b-2 sm:text-[4rem] gradient-title underline">
             Latest Stocks News
@@ -50,7 +50,7 @@ const Landing = () => {
             <div className="flex mt-5 sm:pr-2 flex-col w-full gap-2">
               {trendingStocks?.top_losers?.map((item) => {
                 return (
-                  <Card className="dark:bg-zinc-950 bg-zinc-100 dark:text-white dark:border-zinc-600  w-full" key={item.ticker_id}>
+                  <Card className="dark:bg-zinc-900 border-none bg-zinc-100 dark:text-white dark:border-zinc-600  w-full" key={item.ticker_id}>
                     <CardHeader>
                       <CardTitle className="flex justify-between font-light">
                         {item.company_name}
@@ -58,7 +58,7 @@ const Landing = () => {
                       </CardTitle>
                       <h2 className="text-sm">{item?.date}</h2>
                     </CardHeader>
-                    <CardContent className="flex max-sm  justify-between">
+                    <CardContent className="flex max-sm:text-xs  justify-between">
                       <span className="">
                         Long term trend : {item?.long_term_trends} {"   "}
                       </span>
@@ -72,7 +72,7 @@ const Landing = () => {
               })}
             </div>
           </div>
-          <div className="w-full max-sm:px-4 sm:pr-8  ">
+          <div className="w-full max-sm:px-4 sm:pr-8   ">
             <h1 className="text-xl sm:text-4xl max-sm:ml-2 w-1/3 pl-2 pb-2 border-b-2 sm:border-l-2 text-zinc-900 dark:text-zinc-300   font-bold ">
               Top Gainers
             </h1>
@@ -80,7 +80,7 @@ const Landing = () => {
               {trendingStocks?.top_gainers?.map((item) => {
                 return (
                   <Card
-                    className="dark:bg-zinc-950 bg-zinc-100 w-full dark:text-white dark:border-zinc-600"
+                    className="dark:bg-zinc-900 border-none bg-zinc-100 w-full dark:text-white dark:border-zinc-600"
                     key={item.ticker_id}
                   >
                     <CardHeader>
@@ -90,7 +90,7 @@ const Landing = () => {
                       </CardTitle>
                       <h2 className="text-sm">{item?.date}</h2>
                     </CardHeader>
-                    <CardContent className="flex justify-between">
+                    <CardContent className="flex justify-between max-sm:text-xs ">
                       <span className="">
                         Long term trend : {item?.long_term_trends}
                       </span>

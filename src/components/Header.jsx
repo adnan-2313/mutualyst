@@ -1,6 +1,6 @@
 import { navItems } from "@/utils/constant";
 import { Button } from "./ui/button";
-import { MenuIcon, MoonIcon, SunIcon, X } from "lucide-react";
+import { ChevronRight, MenuIcon, MoonIcon, SunIcon, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
@@ -78,6 +78,19 @@ const Header = ({ theme, setTheme }) => {
               <X />
             </button>
           </div>
+          <ul className="flex flex-col  w-full items-center gap-4 text-md justify-between">
+            {navItems.map((items) => {
+              return (
+                <li
+                onClick={()=>setIsOpen(false)}
+                  key={items.id}
+                  className="cursor-pointer text-md px-4 py-2 w-full border-b hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-800 dark:hover:text-zinc-400"
+                >
+                  <NavLink  className="flex justify-between" to={items.link}>{items.title}  <ChevronRight /> </NavLink>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </nav>
     </>
