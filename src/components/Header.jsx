@@ -4,8 +4,14 @@ import { MenuIcon, MoonIcon, SunIcon, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
+import useFetchStocks from "@/hooks/useFetchStocks";
+
 const Header = ({ theme, setTheme }) => {
+
+  
   const [isOpen, setIsOpen] = useState(false);
+
+  useFetchStocks();
 
   const handleThemeSwitch = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

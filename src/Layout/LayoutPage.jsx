@@ -1,6 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import appStore from "../store/appStore";
+import { Provider } from "react-redux";
 const LayoutPage = () => {
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
@@ -12,10 +14,12 @@ const LayoutPage = () => {
   }, [theme]);
   return (
     <>
-      <div className="background-dark transition-all duration-300">
-        <Header theme={theme} setTheme={setTheme} />
-        <Outlet />
-      </div>
+      <Provider store={appStore}>
+        <div className="background-dark transition-all duration-300">
+          <Header theme={theme} setTheme={setTheme} />
+          <Outlet />
+        </div>
+      </Provider>
     </>
   );
 };

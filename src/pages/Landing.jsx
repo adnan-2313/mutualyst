@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 
 import { ChevronRight } from "lucide-react";
-
+import { useSelector } from "react-redux";
 const Landing = () => {
+  const trendingStocks = useSelector((store) => store.stocks.trendingStocks);
+
+  console.log(trendingStocks?.trending_stocks);
   return (
     <section>
       <main className="flex flex-col justify-center items-center pt-32 pb-20 ">
@@ -18,7 +21,10 @@ const Landing = () => {
           ahead of the market. Let Mutualyst guide you to smarter decisions.
         </p>
         <div className="mt-4 sm:mt-10 flex sm:gap-4 gap-2 items-center max-sm:flex-col">
-          <Button variant="secondary" className="border border-zinc-800  dark:border-none bg-white text-black hover:text-white px-10 py-5 sm:py-6 md:text-lg">
+          <Button
+            variant="secondary"
+            className="border border-zinc-800  flex  dark:border-none bg-zinc-100 text-black  hover:bg-zinc-100 px-10 py-5 sm:py-6 md:text-lg"
+          >
             Get Started <ChevronRight />{" "}
           </Button>
           <Button className="bg-black hover:bg-zinc-900 hover:text-white text-white  border-zinc-800 border px-12 py-5 md:py-6 md:text-lg">
@@ -26,7 +32,6 @@ const Landing = () => {
           </Button>
         </div>
       </main>
-     
     </section>
   );
 };

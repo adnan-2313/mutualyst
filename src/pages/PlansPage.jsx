@@ -18,7 +18,7 @@ const PlansPage = () => {
         {plansList.map((item) => {
           return (
             <Card
-              className="dark:bg-zinc-950 w-[300px]  dark:text-white dark:border-zinc-600"
+              className="dark:bg-zinc-950 bg-zinc-100 w-[300px]  dark:text-white dark:border-zinc-600"
               key={item.id}
             >
               <CardHeader>
