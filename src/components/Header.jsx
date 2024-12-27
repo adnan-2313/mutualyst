@@ -82,11 +82,13 @@ const Header = ({ theme, setTheme }) => {
             {navItems.map((items) => {
               return (
                 <li
-                onClick={()=>setIsOpen(false)}
+                  onClick={() => setIsOpen(false)}
                   key={items.id}
                   className="cursor-pointer text-md px-4 py-2 w-full border-b hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-800 dark:hover:text-zinc-400"
                 >
-                  <NavLink  className="flex justify-between" to={items.link}>{items.title}  <ChevronRight /> </NavLink>
+                  <NavLink className="flex justify-between" to={items.link}>
+                    {items.title} <ChevronRight />{" "}
+                  </NavLink>
                 </li>
               );
             })}

@@ -3,7 +3,9 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import appStore from "../store/appStore";
 import { Provider } from "react-redux";
+import useFetchStocks from "@/hooks/useFetchStocks";
 const LayoutPage = () => {
+  
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
   );

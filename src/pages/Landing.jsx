@@ -1,3 +1,4 @@
+import Loading from "@/components/Landing";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
@@ -8,6 +9,10 @@ const Landing = () => {
   );
 
   console.log(trendingStocks);
+  if (!trendingStocks) {
+    return <Loading />;
+  }
+
   return (
     <section>
       <main className="flex flex-col justify-center items-center pt-32 pb-20 ">
@@ -50,7 +55,10 @@ const Landing = () => {
             <div className="flex mt-5 sm:pr-2 flex-col w-full gap-2">
               {trendingStocks?.top_losers?.map((item) => {
                 return (
-                  <Card className="dark:bg-zinc-900 border-none bg-zinc-100 dark:text-white dark:border-zinc-600  w-full" key={item.ticker_id}>
+                  <Card
+                    className="dark:bg-zinc-900 border-none bg-zinc-100 dark:text-white dark:border-zinc-600  w-full"
+                    key={item.ticker_id}
+                  >
                     <CardHeader>
                       <CardTitle className="flex justify-between font-light">
                         {item.company_name}
