@@ -7,8 +7,6 @@ import { useState } from "react";
 import useFetchStocks from "@/hooks/useFetchStocks";
 
 const Header = ({ theme, setTheme }) => {
-
-  
   const [isOpen, setIsOpen] = useState(false);
 
   useFetchStocks();
@@ -60,7 +58,7 @@ const Header = ({ theme, setTheme }) => {
               Login
             </Button>
             <button
-              className={` lg:hidden `}
+              className={` md:hidden `}
               onClick={() => setIsOpen(!isOpen)}
             >
               <MenuIcon />
@@ -69,7 +67,7 @@ const Header = ({ theme, setTheme }) => {
         </div>
       </header>
       <nav
-        className={`z-50 left-0 w-full top-0 absolute ${
+        className={`z-50 left-0 w-full top-0 fixed ${
           isOpen ? "h-screen" : "h-0"
         } right-16  shadow-lg lg:hidden bg-white  dark:bg-zinc-950  overflow-hidden transition-all duration-500 `}
       >
