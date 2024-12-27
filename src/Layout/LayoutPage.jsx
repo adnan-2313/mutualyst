@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import appStore from "../store/appStore";
 import { Provider } from "react-redux";
 import useFetchStocks from "@/hooks/useFetchStocks";
+import Footer from "@/components/Footer";
 const LayoutPage = () => {
-  
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light"
   );
@@ -17,10 +17,12 @@ const LayoutPage = () => {
   return (
     <>
       <Provider store={appStore}>
-        <div className="background-dark transition-all duration-300">
+        <div className="relative background-dark transition-all duration-300">
           <Header theme={theme} setTheme={setTheme} />
           <Outlet />
+          <Footer />
         </div>
+        
       </Provider>
     </>
   );

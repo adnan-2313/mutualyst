@@ -1,11 +1,13 @@
 :root {
   --bg-color: #f5f4f4;
   --dot-color: #b6b5b5;
+  --txt:rgb(90, 81, 81);
 }
 
 .dark {
   --bg-color: #09090b;
-  --dot-color: #3f3b3b;
+  --dot-color: #352828;
+  --txt:white;
 }
 
 .background-dark {
@@ -14,5 +16,5 @@
   background-size: 30px 30px;
 }
 .active {
-  color: #a1a1a1;
+  color: var(--txt);
 }

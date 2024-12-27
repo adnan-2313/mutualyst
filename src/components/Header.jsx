@@ -5,9 +5,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 import useFetchStocks from "@/hooks/useFetchStocks";
+import Auth from "./Auth";
 
 const Header = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [AuthOn, setAuthOn] = useState(false);
 
   useFetchStocks();
 
@@ -18,7 +20,7 @@ const Header = ({ theme, setTheme }) => {
   return (
     <>
       <header className="">
-        <div className="w-full px-6  flex max-w-[90rem]  fixed top-0 py-3 mx-auto  backdrop-blur-xl   justify-between">
+        <div className="w-full px-6  flex max-w-[90rem]  fixed top-0 py-3 mx-auto  backdrop-blur-3xl   justify-between">
           <img
             src="/Logo2.png"
             alt=""
@@ -30,7 +32,7 @@ const Header = ({ theme, setTheme }) => {
                 return (
                   <li
                     key={items.id}
-                    className="cursor-pointer hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-800 dark:hover:text-zinc-400"
+                    className="cursor-pointer hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-500 dark:hover:text-zinc-3 00"
                   >
                     <NavLink to={items.link}>{items.title}</NavLink>
                   </li>
@@ -52,6 +54,7 @@ const Header = ({ theme, setTheme }) => {
               )}
             </button>
             <Button
+              onClick={() => setAuthOn(true)}
               variant="default"
               className="sm:px-6 bg-zinc-800 hover:bg-zinc-700 sm:py-5 text-white"
             >
@@ -84,7 +87,7 @@ const Header = ({ theme, setTheme }) => {
                 <li
                   onClick={() => setIsOpen(false)}
                   key={items.id}
-                  className="cursor-pointer text-md px-4 py-2 w-full border-b hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-800 dark:hover:text-zinc-400"
+                  className="cursor-pointer text-md px-4 py-2 w-full border-b hover:text-zinc-800 text-zinc-950 transition-all duration-300  dark:text-zinc-500 dark:hover:text-zinc-400"
                 >
                   <NavLink className="flex justify-between" to={items.link}>
                     {items.title} <ChevronRight />{" "}
@@ -95,6 +98,7 @@ const Header = ({ theme, setTheme }) => {
           </ul>
         </div>
       </nav>
+      {AuthOn && <Auth AuthOn={AuthOn} setAuthOn={setAuthOn} />}
     </>
   );
 };
