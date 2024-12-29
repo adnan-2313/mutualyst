@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { addTrendingStocks } from "../slices/stocksSlice";
 import { useDispatch } from "react-redux";
 const useFetchStocks = () => {

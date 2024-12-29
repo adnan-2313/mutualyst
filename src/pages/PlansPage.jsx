@@ -29,7 +29,7 @@ const PlansPage = () => {
                 <ul className="">
                   {item.features.map((feat) => {
                     return (
-                      <li className="py-1 max-sm:text-sm" key={feat}>
+                      <li className="py-1  text-sm flex items-center" key={feat}>
                         {feat}
                       </li>
                     );

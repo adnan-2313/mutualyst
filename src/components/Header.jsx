@@ -22,9 +22,9 @@ const Header = ({ theme, setTheme }) => {
       <header className="">
         <div className="w-full px-6  flex max-w-[90rem]  fixed top-0 py-3 mx-auto  backdrop-blur-3xl   justify-between">
           <img
-            src="/Logo2.png"
+            src="/New_Logo.png"
             alt=""
-            className="w-36 sm:w-44 dark:bg-transparent  bg-black px-2 py-1 rounded-xl"
+            className="w-20 sm:w-32 dark:bg-transparent  bg-black px-2 py-1 rounded-xl"
           />
           <nav className="hidden md:flex font-semibold  justify-center items-center gap-4">
             <ul className="flex items-center gap-4 text-md justify-between">
