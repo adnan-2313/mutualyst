@@ -24,7 +24,7 @@ const Header = ({ theme, setTheme }) => {
           <img
             src="/New_Logo.png"
             alt=""
-            className="w-20 sm:w-32 dark:bg-transparent  bg-black px-2 py-1 rounded-xl"
+            className="w-28 sm:w-32 dark:bg-transparent  bg-black px-2 py-1 rounded-xl"
           />
           <nav className="hidden md:flex font-semibold  justify-center items-center gap-4">
             <ul className="flex items-center gap-4 text-md justify-between">
