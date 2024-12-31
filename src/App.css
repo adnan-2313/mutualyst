@@ -1,11 +1,11 @@
 :root {
-  --bg-color: #f5f4f4;
-  --dot-color: #b6b5b5;
+  --bg-color: white;
+  --dot-color: none;
   --txt:rgb(90, 81, 81);
 }
 
 .dark {
-  --bg-color: #09090b;
+  --bg-color: #101011;
   --dot-color: #352828;
   --txt:white;
 }
@@ -13,7 +13,7 @@
 .background-dark {
   background-color: var(--bg-color);
   background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-  background-size: 30px 30px;
+  /* background-size: 30px 30px; */
 }
 .active {
   color: var(--txt);

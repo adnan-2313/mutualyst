@@ -4,6 +4,7 @@ import LayoutPage from "./Layout/LayoutPage";
 import Landing from "./pages/Landing";
 import PlansPage from "./pages/PlansPage";
 import ErrorPage from "./pages/ErrorPage";
+import NewsPage from "./pages/NewsPage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/plans",
         element: <PlansPage />,
+      },
+      {
+        path: "/news",
+        element: <NewsPage />,
       },
     ],
   },

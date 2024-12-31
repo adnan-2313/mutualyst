@@ -1,3 +1,4 @@
+import { Home, Newspaper, Users, Star } from "lucide-react";
 export const plansList = [
   {
     id: 1,
@@ -67,8 +68,8 @@ export const plansList = [
       "Custom SLAs and agreements",
     ],
   },
-];
 
+];
 
 export const navItems = [
   {
@@ -78,17 +79,62 @@ export const navItems = [
   },
   {
     id: 2,
-    title: "Membership",
-    link: "/plans",
+    title: "News",
+    link: "/news",
   },
   {
     id: 3,
-    title: "Services",
-    link: "/services",
+    title: "Community",
+    link: "/community",
   },
   {
     id: 4,
-    title: "Contacts",
-    link: "/contacts",
+    title: "SuperHeros",
+    link: "/superhero",
   },
+];
+
+export const barItems = [
+  {
+    id: 1,
+    title: "Home",
+    link: "/",
+    icon: Home,
+  },
+  {
+    id: 2,
+    title: "News",
+    link: "/news",
+    icon: Newspaper,
+  },
+  {
+    id: 3,
+    title: "Community",
+    link: "/community",
+    icon: Users,
+  },
+  {
+    id: 4,
+    title: "SuperHeros",
+    link: "/superhero",
+    icon: Star,
+  },
+];
+export const endpoints = [
+  { name: "Stock Data", path: "Get_Stock_Data_by_Name" },
+  { name: "Industry", path: "Industry_Search" },
+  { name: "Mutual Fund ", path: "Mutual_Fund_Search" },
+  { name: "Commodity Futures", path: "Commodity_Futures_Data_API" },
+  { name: "Price Shockers", path: "Price_Shockers" },
+  { name: "Mutual Funds", path: "Mutual_Funds" },
+  { name: "BSE Most Active", path: "BSE_Most_Active" },
+  { name: "Analyst Recommendations", path: "Analyst_Recommendations" },
+  { name: "IPO", path: "IPO" },
+  { name: "Corporate Actions", path: "Corporate_Actions" },
+  { name: "Historical Data", path: "Historical_Data" },
+  { name: "Historical Stats", path: "Historical_Stats" },
+  { name: "Stock Forecasts", path: "Stock_Forecasts" },
+  { name: "NSE Most Active", path: "NSE_Most_Active" },
+  { name: "Get Trending Stocks", path: "Get_Trending_Stocks" },
+  // { name: "Fetch 52 Week High Low Data", path: "Fetch_52_Week_High_Low_Data" },
 ];
