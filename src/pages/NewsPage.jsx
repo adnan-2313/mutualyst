@@ -8,10 +8,10 @@ const NewsPage = () => {
     (store) => store.stocks.trendingStocks?.trending_stocks
   );
 
-  const selectedEndPoint = useSelector((store) => store.stocks?.endPoint);
+const selectedEndPoint = useSelector((store) => store.stocks?.endPoint);
 
   console.log(selectedEndPoint);
-  const dispatch = useDispatch();
+const dispatch = useDispatch();
   
   const handleClick = (item) => {
     dispatch(addEndPoint(item));

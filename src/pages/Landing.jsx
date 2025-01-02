@@ -1,4 +1,3 @@
-import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 

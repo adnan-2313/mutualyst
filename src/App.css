@@ -1,14 +1,15 @@
 :root {
   --bg-color: white;
   --dot-color: none;
-  --txt:rgb(90, 81, 81);
+  --txt: rgb(90, 81, 81);
 }
 
 .dark {
   --bg-color: #101011;
   --dot-color: #352828;
-  --txt:white;
+  --txt: white;
 }
+
 
 .background-dark {
   background-color: var(--bg-color);

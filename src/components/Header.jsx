@@ -1,17 +1,19 @@
 import { navItems } from "@/utils/constant";
 import { Button } from "./ui/button";
 import { ChevronRight, MenuIcon, MoonIcon, SunIcon, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogo, toggleTheme } from "@/slices/appConfigSlice";
 import useFetchStocks from "@/hooks/useFetchStocks";
 import Auth from "./Auth";
+import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const [search, setSearch] = useSearchParams();
+  const [showSignIn, setShowSignIn] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [AuthOn, setAuthOn] = useState(false);
 
   const img = useSelector((store) => store.appConfig.logo);
   const theme = useSelector((state) => state.appConfig.theme);
@@ -22,6 +24,18 @@ const Header = () => {
     dispatch(toggleTheme());
   };
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setShowSignIn(false);
+    }
+  };
+
+  useEffect(() => {
+    if (search.get("sign-in")) {
+      setShowSignIn(true);
+    }
+  }, [search]);
+
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
     dispatch(setLogo(theme === "dark" ? "/2.png" : "/1.png"));
@@ -30,11 +44,11 @@ const Header = () => {
   return (
     <>
       <header>
-        <div className="w-full z-20 border-b border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-between">
+        <div className="w-full z-20 items-center border-b pb-2 border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-between">
           <img
             src={img}
             alt="Logo"
-            className="w-36 sm:w-44 dark:bg-transparent px-2 py-1 rounded-xl"
+            className="w-32 sm:w-40 dark:bg-transparent px-2 py-1  rounded-xl"
           />
           <nav className="hidden md:flex font-semibold justify-center items-center gap-4">
             <ul className="flex items-center gap-4 text-md justify-between">
@@ -61,13 +75,19 @@ const Header = () => {
                 <SunIcon size="20px" />
               )}
             </button>
-            <Button
-              onClick={() => setAuthOn(true)}
-              variant="default"
-              className="sm:px-6 bg-zinc-800 hover:bg-zinc-700 sm:py-5 text-white"
-            >
-              Login
-            </Button>
+            <div>
+              <SignedOut>
+                <Button
+                  onClick={() => setShowSignIn(true)}
+                  className="sm:px-6 bg-zinc-800 hover:bg-zinc-700 sm:py-5 text-white"
+                >
+                  Login
+                </Button>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </div>
             <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
               <MenuIcon />
             </button>
@@ -104,7 +124,14 @@ const Header = () => {
           </ul>
         </div>
       </nav>
-      {AuthOn && <Auth AuthOn={AuthOn} setAuthOn={setAuthOn} />}
+      {showSignIn && (
+        <div
+          className="fixed inset-0 flex z-[100] items-center justify-center bg-black bg-opacity-50"
+          onClick={handleOverlayClick}
+        >
+          <SignIn signUpForceRedirectUrl="/" fallbackRedirectUrl="/"></SignIn>
+        </div>
+      )}
     </>
   );
 };
