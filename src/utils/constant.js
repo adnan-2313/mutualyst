@@ -68,7 +68,6 @@ export const plansList = [
       "Custom SLAs and agreements",
     ],
   },
-
 ];
 
 export const navItems = [
@@ -137,4 +136,13 @@ export const endpoints = [
   { name: "NSE Most Active", path: "NSE_Most_Active" },
   { name: "Get Trending Stocks", path: "Get_Trending_Stocks" },
   // { name: "Fetch 52 Week High Low Data", path: "Fetch_52_Week_High_Low_Data" },
+];
+
+export const TypeRegistration = [
+  "Registered stock brokers in currency derivative segment",
+  "Merchant brokers",
+  "Registered portfolio managers",
+  "Investment advisors",
+  "Registered stock brokers in equity derivative segment",
+  "Registered stock brokers in equity segment",
 ];

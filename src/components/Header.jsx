@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogo, toggleTheme } from "@/slices/appConfigSlice";
 import useFetchStocks from "@/hooks/useFetchStocks";
-import Auth from "./Auth";
 import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
@@ -44,24 +43,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <div className="w-full z-20 items-center border-b pb-2 border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-between">
-          <img
-            src={img}
-            alt="Logo"
-            className="w-32 sm:w-40 dark:bg-transparent px-2 py-1  rounded-xl"
-          />
-          <nav className="hidden md:flex font-semibold justify-center items-center gap-4">
-            <ul className="flex items-center gap-4 text-md justify-between">
-              {navItems.map((items) => (
-                <li
-                  key={items.id}
-                  className="cursor-pointer hover:text-zinc-800 text-zinc-950 transition-all duration-300 dark:text-zinc-500 dark:hover:text-zinc-300"
-                >
-                  <NavLink to={items.link}>{items.title}</NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <div className="w-full z-20 items-center mt-2 border-b pb-2 border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-end">
           <div className="flex items-center gap-3">
             <button
               className={`transition-transform duration-700 dark:text-white bg-transparent hover:bg-transparent ${

@@ -15,7 +15,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Landing />,
+        element: (
+          <ProtectedRoutes>
+            <Landing />
+          </ProtectedRoutes>
+        ),
       },
       {
         path: "/plans",
