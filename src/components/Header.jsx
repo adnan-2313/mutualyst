@@ -1,4 +1,4 @@
-import { navItems } from "@/utils/constant";
+import { barItems, navItems } from "@/utils/constant";
 import { Button } from "./ui/button";
 import { ChevronRight, MenuIcon, MoonIcon, SunIcon, X } from "lucide-react";
 import { NavLink, useSearchParams } from "react-router-dom";
@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <div className="w-full z-20 items-center mt-2 border-b pb-2 border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-end">
+        <div className="w-full z-20 items-center  pt-2 border-b pb-2 border-zinc-200 dark:border-zinc-800 px-6 flex max-w-[90rem] fixed top-0  mx-auto backdrop-blur-3xl justify-end">
           <div className="flex items-center gap-3">
             <button
               className={`transition-transform duration-700 dark:text-white bg-transparent hover:bg-transparent ${
@@ -92,14 +92,17 @@ const Header = () => {
             </button>
           </div>
           <ul className="flex flex-col w-full items-center gap-4 text-md justify-between">
-            {navItems.map((items) => (
+            {barItems.map((items) => (
               <li
                 onClick={() => setIsOpen(false)}
                 key={items.id}
                 className="cursor-pointer text-md font-semibold px-4 py-2 w-full border-b hover:text-zinc-800 text-zinc-950 transition-all duration-300 dark:text-zinc-500 dark:hover:text-zinc-400"
               >
                 <NavLink className="flex justify-between" to={items.link}>
-                  {items.title} <ChevronRight />
+                  <span className="flex gap-2 items-center">
+                    <items.icon size={20} /> {items.title}
+                  </span>
+                  <ChevronRight />
                 </NavLink>
               </li>
             ))}

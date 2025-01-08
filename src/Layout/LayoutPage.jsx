@@ -10,7 +10,7 @@ const LayoutPage = () => {
       <Provider store={appStore}>
         <div className="flex  justify-center w-full">
           <div className="background-dark transition-all duration-300  max-w-[90rem] w-full ">
-            <Sidebar/>
+            <Sidebar />
             <Header />
             <Outlet />
           </div>

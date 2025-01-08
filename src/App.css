@@ -2,14 +2,15 @@
   --bg-color: white;
   --dot-color: none;
   --txt: rgb(90, 81, 81);
+  --bg: #d4d4d8;
 }
 
 .dark {
   --bg-color: #101011;
   --dot-color: #352828;
-  --txt: white;
+  --txt: rgb(126, 124, 124);
+  --bg: #27272a;
 }
-
 
 .background-dark {
   background-color: var(--bg-color);
@@ -17,5 +18,9 @@
   /* background-size: 30px 30px; */
 }
 .active {
-  color: var(--txt);
+  color: var(--txt, rgb(90, 81, 81));
+  background-color: var(--bg, #d4d4d8);
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+
