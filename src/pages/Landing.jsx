@@ -52,7 +52,7 @@ const Landing = () => {
           <br />
           Mutualyst
         </h1>
-        <p className="dark:font-light dark:text-zinc-300 text-zinc-800">
+        <p className="dark:font-light text-center dark:text-zinc-300 text-zinc-800">
           Discover the latest stock market trends and insights on one seamless
           platform. Login to start exploring.
         </p>
@@ -89,13 +89,14 @@ const Landing = () => {
             Post A Trend
           </Button>
         </div>
-
-        <div className="flex w-full mt-24 justify-center items-center">
-          {errorPost && (
-            <p className="dark:text-zinc-400 text-zinc-800 text-center mt-4">
+        {errorPost && (
+          <div className="w-full text-center ">
+            <p className="dark:text-zinc-400 w-full  text-zinc-800 text-center mt-12">
               Please Login To access posts
             </p>
-          )}
+          </div>
+        )}
+        <div className="flex w-full  mt-24 justify-center items-center">
           <div className="flex flex-col items-center w-full justify-center">
             {loadingPost && <ShimmerLoader />}
             {!loadingPost &&
